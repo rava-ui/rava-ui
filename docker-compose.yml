@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  rava-ui:
+    container_name: docs
+    build:
+      context: .
+      dockerfile: dockerfile
+      target: build
+    ports:
+      - 3000:3000
+    volumes:
+      - ./index.html:/mnt/app/index.html
+      - ./favicon.svg:/mnt/app/favicon.svg
+      - ./src/:/mnt/app/src/
